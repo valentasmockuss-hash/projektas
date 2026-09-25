@@ -215,6 +215,14 @@ bool skaitytiFaila(const string& kelias, vector<Studentas>& studentai){
     cout<<"Nuskaityta studentu:"<<studentai.size() << '\n';
     return true;
 }
+bool pagalPavarde(const Studentas& a, const Studentas& b){
+    if (a.pavarde==b.pavarde) return a.vardas<b.vardas;
+    return a.pavarde<b.pavarde;
+}
+bool pagalVarda(const Studentas& a, const Studentas& b){
+    if (a.vardas==b.vardas) return a.pavarde<b.pavarde;
+    return a.vardas<b.vardas;
+}
 
 int main(){
   vector<Studentas> studentai;
@@ -242,6 +250,13 @@ int main(){
         }
         int budas=ivestiSkaiciu("1 - vidurkis, 2 - mediana, 3 - abu: ", 1, 3);
         if (budas==-1) break;
+        int tvarka=ivestiSkaiciu("Rikiuoti: 1 - pagal pavarde, 2 - pagal varda: ", 1, 2);
+        if (tvarka==-1) break;
+        if(tvarka==1){
+            sort(studentai.begin(), studentai.end(), pagalPavarde);
+        }else{
+            sort(studentai.begin(), studentai.end(), pagalVarda);
+        }
         spausdinti(studentai, cout, budas);
     }
   }
