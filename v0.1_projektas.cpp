@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <iomanip>
 #include <sstream>
+#include <random>
 
 using namespace std;
 
@@ -137,27 +138,49 @@ void spausdinti(const vector<Studentas>& studentai, ostream& isvestis, int budas
         isvestis<<'\n';
     }
 }
+bool generuotiStudenta(vector<Studentas>& studentai, mt19937& generatorius){
+    Studentas studentas;
+    if (!ivestiVarda("Vardas: ", studentas.vardas)) return false;
+    if (!ivestiVarda("Pavarde: ", studentas.pavarde)) return false;
+
+    int kiek=ivestiSkaiciu("Kiek ND pazymiu generuoti (1-1000)? ", 1, 1000);
+    if (kiek==-1) return false;
+    uniform_int_distribution<int> pazymys(1, 10);
+    for (int i=0; i<kiek; ++i){
+        studentas.nd.push_back(pazymys(generatorius));
+    }
+    studentas.egzaminas=pazymys(generatorius);
+    cout<<"Sugeneruoti ND: ";
+    for (int nd:studentas.nd) cout<<nd<< ' ';
+    cout<<"\nEgzaminas: "<<studentas.egzaminas<<'\n';
+
+    studentai.push_back(studentas);
+    return true;
+}
 
 int main(){
   vector<Studentas> studentai;
+  mt19937 generatorius(random_device{}());
 
   while(true) {
-    cout<<"\n1 - Ivesti studenta\n"<<"2 - Parodyti rezultatus\n"<<"0 - Baigti\n";
+    cout<<"\n1 - Ivesti studenta\n"<<"2 - Parodyti rezultatus\n"<<"3 - Generuoti studento pazymius\n"<<"0 - Baigti\n";
 
-    int veiksmas=ivestiSkaiciu("pasirinkimas: ", 0, 2);
+
+    int veiksmas=ivestiSkaiciu("Pasirinkimas: ", 0, 3);
     if (veiksmas==0||veiksmas==-1) break;
-    if (veiksmas==1){
-        if(!ivestiStudenta(studentai)) break;
+    if(veiksmas==1){
+        if (!ivestiStudenta(studentai)) break;
+    }else if (veiksmas==3){
+        if (!generuotiStudenta(studentai, generatorius)) break;
     }else{
-        if (studentai.empty()) {
+        if (studentai.empty()){
             cout<<"Pirmiausia iveskite studentus.\n";
             continue;
         }
         int budas=ivestiSkaiciu("1 - vidurkis, 2 - mediana, 3 - abu: ", 1, 3);
-        if(budas==-1) break;
+        if (budas==-1) break;
         spausdinti(studentai, cout, budas);
     }
   }
   return 0;
 }
-
