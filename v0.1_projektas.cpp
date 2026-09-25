@@ -97,18 +97,67 @@ bool ivestiStudenta(vector<Studentas>& studentai){
     return true;
     
 }
+
+size_t simboliuKiekis(const string& tekstas){
+    size_t kiek=0;
+    for(unsigned char simbolis:tekstas){
+        if ((simbolis & 0xC0)!=0x80) ++kiek;
+    }
+    return kiek;
+}
+void tekstoStulpelis(ostream& isvestis, const string& tekstas, size_t plotis) {
+    isvestis<<tekstas<<string(plotis-simboliuKiekis(tekstas), ' ');
+}
+void spausdinti(const vector<Studentas>& studentai, ostream& isvestis, int budas){
+    size_t pavardesPlotis=16, vardoPlotis=16;
+
+    for(const Studentas& s:studentai){
+        pavardesPlotis=max(pavardesPlotis, simboliuKiekis(s.pavarde)+2);
+        vardoPlotis=max(vardoPlotis, simboliuKiekis(s.vardas)+2);
+    }
+    tekstoStulpelis(isvestis, "Pavarde", pavardesPlotis);
+    tekstoStulpelis(isvestis, "Vardas", vardoPlotis);
+    isvestis<<left;
+    if(budas!=2) isvestis<<setw(20)<<"Galutinis (Vid.)";
+    if(budas!=1) isvestis<<setw(20)<<"Galutinis (Med.)";
+    size_t plotis=pavardesPlotis + vardoPlotis +(budas==3?40:20);
+    isvestis<< '\n'<<string(plotis, '-')<<'\n';
+    isvestis<<fixed<<setprecision(2);
+
+    for(const Studentas& s:studentai){
+        tekstoStulpelis(isvestis, s.pavarde, pavardesPlotis);
+        tekstoStulpelis(isvestis, s.vardas, vardoPlotis);
+
+        if(budas!=2){
+            isvestis<<setw(20)<<galutinis(vidurkis(s.nd), s.egzaminas);
+        }
+        if(budas !=1){
+            isvestis<<setw(20)<<galutinis(mediana(s.nd), s.egzaminas);
+        }
+        isvestis<<'\n';
+    }
+}
+
 int main(){
-   vector<Studentas> studentai;
-   if(!ivestiStudenta(studentai)) return 0;
-   const Studentas& s=studentai.back();
+  vector<Studentas> studentai;
 
-    double ndVidurkis=vidurkis(s.nd);
-    double ndMediana=mediana(s.nd);
+  while(true) {
+    cout<<"\n1 - Ivesti studenta\n"<<"2 - Parodyti rezultatus\n"<<"0 - Baigti\n";
 
-    cout<<fixed<<setprecision(2);
-    cout<<s.vardas<<" "<<s.pavarde<<"\n";
-    cout<<"Galutinis (vidurkis):"<<galutinis(ndVidurkis, s.egzaminas)<<"\n";
-    cout<<"Galutinis (mediana):"<<galutinis(ndMediana, s.egzaminas)<<"\n";
-    return 0;
+    int veiksmas=ivestiSkaiciu("pasirinkimas: ", 0, 2);
+    if (veiksmas==0||veiksmas==-1) break;
+    if (veiksmas==1){
+        if(!ivestiStudenta(studentai)) break;
+    }else{
+        if (studentai.empty()) {
+            cout<<"Pirmiausia iveskite studentus.\n";
+            continue;
+        }
+        int budas=ivestiSkaiciu("1 - vidurkis, 2 - mediana, 3 - abu: ", 1, 3);
+        if(budas==-1) break;
+        spausdinti(studentai, cout, budas);
+    }
+  }
+  return 0;
 }
 
