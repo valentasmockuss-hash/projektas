@@ -229,10 +229,11 @@ int main(){
   mt19937 generatorius(random_device{}());
 
   while(true) {
-    cout<<"\n1 - Ivesti studenta\n"<<"2 - Parodyti rezultatus\n"<<"3 - Generuoti studento pazymius\n"<<"4 - Skaityti faila (pakeicia studentu sarasa)\n"<<"0 - Baigti\n";
+    cout<<"\n1 - Ivesti studenta\n"<<"2 - Parodyti rezultatus\n"<<"3 - Generuoti studento pazymius\n"
+    <<"4 - Skaityti faila (pakeicia studentu sarasa)\n"<<"5 - Issaugoti rezultatus faile\n"<<"0 - Baigti\n";
 
 
-    int veiksmas=ivestiSkaiciu("Pasirinkimas: ", 0, 4);
+    int veiksmas=ivestiSkaiciu("Pasirinkimas: ", 0, 5);
     if (veiksmas==0||veiksmas==-1) break;
     if(veiksmas==1){
         if (!ivestiStudenta(studentai)) break;
@@ -257,8 +258,25 @@ int main(){
         }else{
             sort(studentai.begin(), studentai.end(), pagalVarda);
         }
-        spausdinti(studentai, cout, budas);
+        if (veiksmas==5){
+            ofstream rezultatai("rezultatai.txt");
+            if(!rezultatai){
+                cout<<"Nepavyko sukurti rezultatu failo.\n";
+                continue;
+            }
+            spausdinti(studentai, rezultatai, budas);
+            rezultatai.close();
+
+            if(rezultatai){
+                cout<<"Rezultatai issaugoti faile rezultatai.txt\n";
+            }else {
+                cout<<"Klaida irasant rezultatus.\n";
+            }
+        } else {
+            spausdinti(studentai, cout, budas);
+        }
     }
-  }
-  return 0;
 }
+return 0;
+}
+        
