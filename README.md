@@ -25,8 +25,24 @@ g++ -std=c++17 -Wall -Wextra -Wpedantic "v0.1_projektas.cpp" -o studentai.exe
 1 - ivesti studenta ir jo pazymius rankiniu budu
 2 - pasirinkti skaiciavimo buda ir parodyti rezultatus
 3 - ivesti studento varda, pavarde ir generuoti pazymius
+4 - nuskaityti studentus is failo, pakeiciant dabartini sarasa
+6 - issaugoti surusiuotus rezultatus faile rezultatai.txt
 0 - baigti programa
 
 Vedant namu darbu pazymius rankiniu budu, tuscia eilute uzbaigia ivedima. Reikalingas bent vienas namu darbo pazymys. Rankiniu budu priimami pazymiai nuo 0 iki 10, atsitiktinai pazymiai generuojami nuo 1 iki 10.
 
-Studentu duomenys saugomi programos veikimo metu, uzdarius programa, ivesti duomenys neissaugomi.
+Ivesti duomenys automatiskai neissaugomi. Pasirinkus meniu punkta 5, galutiniai rezultatao irasomi i rezultatai.txt. Ankstesnis sio failo turinys perrasomas.
+
+
+#Versija v0.1
+
+Pridetas studentu skaitymas is failo, rusiavimas pagal varda arba pavarde ir rezultatu issaugojimas faile rezultatai.txt.
+
+Duomenu failo pirmoje eiluteje pateikiamos stulpeliu antrastes: Vardas Pavarde ND1 ND2...Egzaminas.
+Pirmuju dvieju stulpeliu tvarka galima ir atvirkstine. Paskutinis pazymys yra egzamino rezultatas, o namu darbu skaicius nustatomas pagal antraste.
+
+#patikrinimai
+
+Pradzioje atlikti patikrinimai su kursiokai.txt: galutiniai balai pagal vidurki ir mediana, rusiavimai pagal pavardes arba vardus.
+
+Su destytojo failais patikrintas nuskaitytu studentu skaicius.
