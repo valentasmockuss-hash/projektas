@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <sstream>
 #include <random>
+#include <fstream>
 
 using namespace std;
 
@@ -157,22 +158,84 @@ bool generuotiStudenta(vector<Studentas>& studentai, mt19937& generatorius){
     studentai.push_back(studentas);
     return true;
 }
+bool skaitytiFaila(const string& kelias, vector<Studentas>& studentai){
+    ifstream failas(kelias);
+    if(!failas){
+        cout<<"Nepavyko atidaryti failo.\n";
+        return false;
+    }
+    string eilute, zodis;
+    getline(failas, eilute);
+    if (eilute.compare(0, 3, "\xEF\xBB\xBF")==0) eilute.erase(0, 3);
+
+    istringstream antrasteSrautas(eilute);
+    vector<string> antraste;
+    while (antrasteSrautas>>zodis) antraste.push_back(zodis);
+    if(antraste.size()<4){
+        cout<<"Netinkama failo antraste.\n";
+        return false;
+    }
+    bool vardasPirmas=antraste[0]=="Vardas" && (antraste[1]=="Pavarde"||antraste[1]=="Pavardė");
+    bool pavardePirma=(antraste[0]=="Pavarde"||antraste[0]=="Pavardė")&&antraste[1]=="Vardas";
+    if(!vardasPirmas && !pavardePirma){
+        cout<<"Antrasteje turi buti Vardas Pavarde arba Pavarde Vardas.\n";
+        return false;
+    }
+    vector<Studentas> nuskaityti;
+    size_t numeris=1;
+    while (getline(failas, eilute)) {
+        ++numeris;
+        if (eilute.find_first_not_of(" \t\r")==string::npos) continue;
+        istringstream srautas(eilute);
+        Studentas s;
+        bool tinkama=static_cast<bool>(srautas>>s.vardas>>s.pavarde);
+        if(pavardePirma) swap(s.vardas, s.pavarde);
+
+        while(srautas>>zodis){
+            int pazymys;
+            if(!sveikasSkaicius(zodis, pazymys)||pazymys<0||pazymys>10){
+                tinkama=false;
+                break;
+            }
+            s.nd.push_back(pazymys);
+        }
+        if (!tinkama||s.nd.size() != antraste.size() - 2){
+            cout<<"Netinkami duomenys eiluteje"<<numeris<<".\n";
+            return false;
+        }
+        s.egzaminas=s.nd.back();
+        s.nd.pop_back();
+        nuskaityti.push_back(s);
+    }
+    if (!failas.eof() || nuskaityti.empty()){
+        cout<<"Failas tuscias arba jo nuskaityti nepavyko.\n";
+        return false;
+    }
+    studentai.swap(nuskaityti);
+    cout<<"Nuskaityta studentu:"<<studentai.size() << '\n';
+    return true;
+}
 
 int main(){
   vector<Studentas> studentai;
   mt19937 generatorius(random_device{}());
 
   while(true) {
-    cout<<"\n1 - Ivesti studenta\n"<<"2 - Parodyti rezultatus\n"<<"3 - Generuoti studento pazymius\n"<<"0 - Baigti\n";
+    cout<<"\n1 - Ivesti studenta\n"<<"2 - Parodyti rezultatus\n"<<"3 - Generuoti studento pazymius\n"<<"4 - Skaityti faila (pakeicia studentu sarasa)\n"<<"0 - Baigti\n";
 
 
-    int veiksmas=ivestiSkaiciu("Pasirinkimas: ", 0, 3);
+    int veiksmas=ivestiSkaiciu("Pasirinkimas: ", 0, 4);
     if (veiksmas==0||veiksmas==-1) break;
     if(veiksmas==1){
         if (!ivestiStudenta(studentai)) break;
     }else if (veiksmas==3){
         if (!generuotiStudenta(studentai, generatorius)) break;
-    }else{
+    }else if (veiksmas==4){
+        cout<<"Failo pavadinimas: ";
+        string kelias;
+        if(!getline(cin, kelias)) break;
+        skaitytiFaila(kelias, studentai);
+    } else{
         if (studentai.empty()){
             cout<<"Pirmiausia iveskite studentus.\n";
             continue;
