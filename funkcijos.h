@@ -23,5 +23,5 @@ void spausdinti(const std::vector<Studentas>& studentai,
 
 bool pagalPavarde(const Studentas& a, const Studentas& b);
 bool pagalVarda(const Studentas& a, const Studentas& b);
-
+bool generuotiFaila(int kiek, std::mt19937&generatorius);
 #endif

@@ -18,10 +18,10 @@ int main(){
 
   while(true) {
     cout<<"\n1 - Ivesti studenta\n"<<"2 - Parodyti rezultatus\n"<<"3 - Generuoti studento pazymius\n"
-    <<"4 - Skaityti faila (pakeicia studentu sarasa)\n"<<"5 - Issaugoti rezultatus faile\n"<<"0 - Baigti\n";
+    <<"4 - Skaityti faila (pakeicia studentu sarasa)\n"<<"5 - Issaugoti rezultatus faile\n"<<"6 - Generuoti studentu faila\n"<<"0 - Baigti\n";
 
 
-    int veiksmas=ivestiSkaiciu("Pasirinkimas: ", 0, 5);
+    int veiksmas=ivestiSkaiciu("Pasirinkimas: ", 0, 6);
     if (veiksmas==0||veiksmas==-1) break;
     if(veiksmas==1){
         if (!ivestiStudenta(studentai)) break;
@@ -32,6 +32,18 @@ int main(){
         string kelias;
         if(!getline(cin, kelias)) break;
         skaitytiFaila(kelias, studentai);
+    } else if (veiksmas==6){
+        cout<<"1 - 1000 studentu\n"<<"2 - 10000 studentu\n"<<"3 - 100000 studentu\n"
+            <<"4 - 1000000 studentu\n"<<"5 - 10000000 studentu\n";
+         
+        int dydis= ivestiSkaiciu("Pasirinkite dydi: ", 1, 5);
+        if (dydis==-1) break;
+
+        const int kiekiai[]={
+            1000, 10000, 100000, 1000000, 10000000
+        };
+
+        generuotiFaila(kiekiai[dydis - 1], generatorius);
     } else{
         if (studentai.empty()){
             cout<<"Pirmiausia iveskite studentus.\n";

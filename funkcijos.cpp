@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <sstream>
 #include <fstream>
+#include <chrono>
 
 using namespace std;
 
@@ -215,4 +216,52 @@ bool pagalPavarde(const Studentas& a, const Studentas& b){
 bool pagalVarda(const Studentas& a, const Studentas& b){
     if (a.vardas==b.vardas) return a.pavarde<b.pavarde;
     return a.vardas<b.vardas;
+}
+
+bool generuotiFaila(int kiek, mt19937&generatorius) {
+    string kelias="gen_studentai" + to_string(kiek)+".txt";
+
+    ifstream esamas(kelias);
+    if (esamas) {
+        cout<<"Failas jau yra: "<< kelias<< '\n';
+        return false;
+    }
+    auto pradzia = chrono::steady_clock::now();
+
+    ofstream failas(kelias);
+    if (!failas){
+        cout<<"Nepavyko sukurti failo.\n";
+        return false;
+    }
+    const int ndKiekis=10;
+    uniform_int_distribution<int> pazymys(1, 10);
+
+    failas<<"Vardas Pavarde";
+    for (int j=1; j<=ndKiekis; ++j){
+        failas<<" ND"<<j;
+    }
+    failas<<" Egzaminas\n";
+
+    for(int i=1; i<=kiek; ++i){
+        failas<<"Vardas"<<i<<" Pavarde" << i;
+
+        for(int j=0; j<ndKiekis; ++j){
+            failas<< ' '<< pazymys(generatorius);
+        }
+        failas<< ' ' <<pazymys(generatorius)<<'\n';
+    }
+    failas.close();
+    auto pabaiga=chrono::steady_clock::now();
+
+    if(!failas) {
+        cout<<"Klaida irasant faila.\n";
+        return false;
+    }
+    double sekundes=chrono::duration<double>(pabaiga-pradzia).count();
+
+    cout<<"Sukurtas failas: "<<kelias<<'\n';
+    cout<<"Studentu skaicius: "<<kiek<< '\n';
+    cout<<fixed<<setprecision(6)<<"Generavimo laikas: "<<sekundes<<" s\n";
+
+    return true;
 }
