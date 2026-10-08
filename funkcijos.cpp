@@ -265,3 +265,32 @@ bool generuotiFaila(int kiek, mt19937&generatorius) {
 
     return true;
 }
+
+double studentoBalas(const Studentas& s, int budas){
+    double ndBalas=(budas==1) ? vidurkis(s.nd) : mediana(s.nd);
+    return galutinis(ndBalas, s.egzaminas);
+}
+
+size_t skirstytiStudentus(vector<Studentas>& studentai, int budas) {
+    auto riba = partition(studentai.begin(), studentai.end(),
+    [budas](const Studentas& s){
+        return studentoBalas(s, budas)<5.0;
+    });
+    return static_cast<size_t>(riba-studentai.begin());
+}
+
+bool irasytiGrupe(const vector<Studentas>& studentai, size_t nuo,
+                    size_t iki, const string& kelias, int budas){
+    ofstream failas(kelias);
+    if (!failas) return false;
+    failas <<"Pavarde Vardas Galutinis\n";
+    failas<<fixed<<setprecision(2);
+
+    for(size_t i=nuo; i<iki; ++i){
+        const Studentas& s=studentai[i];
+
+        failas<<s.pavarde<<' '<<s.vardas<<' '<<studentoBalas(s, budas)<<'\n';
+    }
+    failas.close();
+    return static_cast<bool>(failas);
+ }

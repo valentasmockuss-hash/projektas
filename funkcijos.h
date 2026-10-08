@@ -4,6 +4,7 @@
 #include "studentas.h"
 #include <ostream>
 #include <random>
+#include <cstddef>
 
 int ivestiSkaiciu (const std::string& klausimas, int nuo, int iki);
 
@@ -24,4 +25,14 @@ void spausdinti(const std::vector<Studentas>& studentai,
 bool pagalPavarde(const Studentas& a, const Studentas& b);
 bool pagalVarda(const Studentas& a, const Studentas& b);
 bool generuotiFaila(int kiek, std::mt19937&generatorius);
+
+std::size_t skirstytiStudentus(
+    std::vector<Studentas>& studentai, int budas
+);
+
+bool irasytiGrupe(
+    const std::vector<Studentas>& studentai,
+    std::size_t nuo, std::size_t iki,
+    const std::string&kelias, int budas
+);
 #endif

@@ -18,10 +18,11 @@ int main(){
 
   while(true) {
     cout<<"\n1 - Ivesti studenta\n"<<"2 - Parodyti rezultatus\n"<<"3 - Generuoti studento pazymius\n"
-    <<"4 - Skaityti faila (pakeicia studentu sarasa)\n"<<"5 - Issaugoti rezultatus faile\n"<<"6 - Generuoti studentu faila\n"<<"0 - Baigti\n";
+    <<"4 - Skaityti faila (pakeicia studentu sarasa)\n"<<"5 - Issaugoti rezultatus faile\n"
+    <<"6 - Generuoti studentu faila\n"<<"7 - Suskirstyti studentus ir issaugoti grupes\n"<<"0 - Baigti\n";
 
 
-    int veiksmas=ivestiSkaiciu("Pasirinkimas: ", 0, 6);
+    int veiksmas=ivestiSkaiciu("Pasirinkimas: ", 0, 7);
     if (veiksmas==0||veiksmas==-1) break;
     if(veiksmas==1){
         if (!ivestiStudenta(studentai)) break;
@@ -44,7 +45,30 @@ int main(){
         };
 
         generuotiFaila(kiekiai[dydis - 1], generatorius);
-    } else{
+    } else if (veiksmas==7){
+        if (studentai.empty()){
+            cout<<"Pirmiausia nuskaitykite arba iveskite studentus.\n";
+            continue;
+        }
+        int budas=ivestiSkaiciu("Skirstyti pagal: 1 - vidurki, 2 - mediana: ", 1, 2);
+        if (budas==-1) break;
+
+        size_t riba=skirstytiStudentus(studentai, budas);
+
+        bool pirmas=irasytiGrupe(
+            studentai, 0, riba, "vargsiukai.txt", budas);
+        
+        bool antras=irasytiGrupe(
+            studentai, riba, studentai.size(), "kietiakai.txt", budas);
+        
+        if (pirmas&&antras){
+            cout<<"Vargsiuku: " <<riba<<'\n';
+            cout<<"Kietiaku: "<<studentai.size() - riba<<'\n';
+            cout<<"Grupes issaugotos i du failus.\n";
+        } else{
+            cout<<"Klaida irasant grupiu failus.\n";
+        }
+    }else {
         if (studentai.empty()){
             cout<<"Pirmiausia iveskite studentus.\n";
             continue;
