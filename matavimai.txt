@@ -1,0 +1,36 @@
+
+Failas: gen_studentai1000.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 1000
+Vargsiuku: 430
+Kietiaku: 570
+Skaitymas: 0.006674 s
+Skirstymas: 0.000058 s
+Vargsiuku irasymas: 0.002235 s
+Kietiaku irasymas: 0.001829 s
+Bendras laikas: 0.010797 s
+
+Failas: gen_studentai1000.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 1000
+Vargsiuku: 430
+Kietiaku: 570
+Skaitymas: 0.008063 s
+Skirstymas: 0.000260 s
+Vargsiuku irasymas: 0.016823 s
+Kietiaku irasymas: 0.004307 s
+Bendras laikas: 0.029454 s
+
+Failas: gen_studentai1000.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 1000
+Vargsiuku: 430
+Kietiaku: 570
+Skaitymas: 0.007662 s
+Skirstymas: 0.000053 s
+Vargsiuku irasymas: 0.007684 s
+Kietiaku irasymas: 0.002658 s
+Bendras laikas: 0.018058 s

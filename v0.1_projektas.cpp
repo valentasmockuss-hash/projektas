@@ -19,10 +19,11 @@ int main(){
   while(true) {
     cout<<"\n1 - Ivesti studenta\n"<<"2 - Parodyti rezultatus\n"<<"3 - Generuoti studento pazymius\n"
     <<"4 - Skaityti faila (pakeicia studentu sarasa)\n"<<"5 - Issaugoti rezultatus faile\n"
-    <<"6 - Generuoti studentu faila\n"<<"7 - Suskirstyti studentus ir issaugoti grupes\n"<<"0 - Baigti\n";
+    <<"6 - Generuoti studentu faila\n"<<"7 - Suskirstyti studentus ir issaugoti grupes\n"
+    <<"8 - Atlikti spartos tyrima\n"<<"0 - Baigti\n";
 
 
-    int veiksmas=ivestiSkaiciu("Pasirinkimas: ", 0, 7);
+    int veiksmas=ivestiSkaiciu("Pasirinkimas: ", 0, 8);
     if (veiksmas==0||veiksmas==-1) break;
     if(veiksmas==1){
         if (!ivestiStudenta(studentai)) break;
@@ -45,6 +46,14 @@ int main(){
         };
 
         generuotiFaila(kiekiai[dydis - 1], generatorius);
+    }else if(veiksmas==8){
+        cout<< "Tiriamo failo pavadinimas: ";
+        string kelias;
+        if(!getline(cin, kelias)) break;
+        int budas=ivestiSkaiciu("1 - vidurkis, 2 - mediana: ", 1, 2);
+        if(budas==-1) break;
+        tirtiSparta(kelias, budas);
+    
     } else if (veiksmas==7){
         if (studentai.empty()){
             cout<<"Pirmiausia nuskaitykite arba iveskite studentus.\n";

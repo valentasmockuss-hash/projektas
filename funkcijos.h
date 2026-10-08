@@ -35,4 +35,6 @@ bool irasytiGrupe(
     std::size_t nuo, std::size_t iki,
     const std::string&kelias, int budas
 );
+void tirtiSparta(const std::string&kelias, int budas);
+
 #endif

@@ -294,3 +294,65 @@ bool irasytiGrupe(const vector<Studentas>& studentai, size_t nuo,
     failas.close();
     return static_cast<bool>(failas);
  }
+
+ void tirtiSparta (const string& kelias, int budas){
+    ofstream zurnalas("matavimai.txt", ios::app);
+    if (!zurnalas){
+        cout<<"Nepavyko atidaryti matavimo failo.\n";
+        return;
+    }
+
+    for(int bandymas=1; bandymas<=3; ++bandymas){
+        vector<Studentas> duomenys;
+        cout<<"\nBandymas "<<bandymas<<" is 3\n";
+
+        auto t0=chrono::steady_clock::now();
+        if(!skaitytiFaila(kelias, duomenys)) return;
+        auto t1=chrono::steady_clock::now();
+
+        size_t riba=skirstytiStudentus(duomenys, budas);
+        auto t2=chrono::steady_clock::now();
+
+        bool pirmas=irasytiGrupe(
+            duomenys, 0, riba, "vargsiukai.txt", budas);
+        auto t3=chrono::steady_clock::now();
+
+        bool antras=irasytiGrupe(
+            duomenys, riba, duomenys.size(), "kietiakai.txt", budas);
+        auto t4=chrono::steady_clock::now();
+
+        if(!pirmas||!antras) {
+            cout<<"Klaida irasant grupes. Bandymas neissaugotas.\n";
+            return;
+        }
+        double skaitymas=chrono::duration<double>(t1-t0).count();
+        double skirstymas=chrono::duration<double>(t2-t1).count();
+        double pirmoIrasymas=chrono::duration<double>(t3-t2).count();
+        double antroIrasymas=chrono::duration<double>(t4-t3).count();
+        double visas=chrono::duration<double>(t4-t0).count();
+
+        ostringstream ataskaita;
+        ataskaita<<fixed<<setprecision(6)
+        <<"\nFailas: "<<kelias<<'\n'
+        <<"Budas: "<<(budas==1?"vidurkis" : "mediana")<<'\n'
+        <<"Bandymas: "<<bandymas<<'\n'
+        <<"Studentu: "<<duomenys.size()<<'\n'
+        <<"Vargsiuku: "<<riba<<'\n'
+        <<"Kietiaku: "<<duomenys.size() - riba<<'\n'
+        <<"Skaitymas: "<<skaitymas<<" s\n"
+        <<"Skirstymas: "<<skirstymas<<" s\n"
+        <<"Vargsiuku irasymas: "<<pirmoIrasymas<<" s\n"
+        <<"Kietiaku irasymas: "<<antroIrasymas<<" s\n"
+        <<"Bendras laikas: "<<visas<<" s\n";
+
+        cout<<ataskaita.str();
+        zurnalas<<ataskaita.str();
+        zurnalas.flush();
+
+        if(!zurnalas){
+            cout<<"Klaida issaugant matavimus.\n";
+            return;
+        }
+    }
+    cout<<"Matavimai prideti i matavimai.txt\n";
+ }
