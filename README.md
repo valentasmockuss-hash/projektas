@@ -84,8 +84,18 @@ Studentu skc|Nuskaitymas, s|Skirstymas, s|Abieju failu irasymas, s|Bendras laika
 
 Visu bandymu duomenys pateikti matavimai.txt
 
+#Failu generavimo trukmes 
+
+| 1 000 | 0.002892 |
+| 10 000 | 0.012358 |
+| 100 000 | 0.111678 |
+| 1 000 000 | 1.104431 |
+| 10 000 000 | 11.234791 |
+
+
 #Rezultatai
 
 Dideliuose failuose daugiausiai laiko uzima nuskaitymas: mazdaug 75% procentus bendros trukmes. Skirstymas i grupes trunka greokai trumpiau nei nuskaitymas ar rezultatu irasymas.
 
 Visuose bandymuose abieju grupiu studentu skaiciu suma sutapo su nuskaitytu studentu skaiciumi.
+
