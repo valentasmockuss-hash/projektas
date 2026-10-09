@@ -16,8 +16,7 @@ galutinis balas = 0,4 x namu darbu rezultatas + 0,6 x egzaminas
 
 #paleidimas
 
-g++ -std=c++17 -Wall -Wextra -Wpedantic "v0.1_projektas.cpp" -o studentai.exe
-.\studentai.exe
+g++ -std=c++17 -O2 -Wall -Wextra -Wpedantic "v0.1_projektas.cpp" "funkcijos.cpp" -o studentai.exe
 
 
 #naudojimas
@@ -46,3 +45,47 @@ Pirmuju dvieju stulpeliu tvarka galima ir atvirkstine. Paskutinis pazymys yra eg
 Pradzioje atlikti patikrinimai su kursiokai.txt: galutiniai balai pagal vidurki ir mediana, rusiavimai pagal pavardes arba vardus.
 
 Su destytojo failais patikrintas nuskaitytu studentu skaicius.
+
+
+#Versija v0.2
+
+*Failas isskaidytas i du .cpp ir du .h failus
+
+*Generuojami oenkiu dydziu studentu failai: 1000, 10000, 100000, 1000000, 10000000
+
+*Kiekvienam studentui generuojama 10 namu darbu pazymiu ir egzamino pazymys 1-10
+
+*Studentai skirstomi pagal galutini bala:
+maziau nei 5 - vargsiukai.txt,
+5 arba daugiau - kietiakai.txt
+
+*Skirstymui naudojama std::partition. Abi grupes laikomos viename vektoriuje, nekuriant papildomu studentu kopiju.
+
+*Galima pasirinkti skaiciavima pagal vidurki arba medina
+
+
+#Spartos tyrimis
+
+Tyrimas atliktas pagal namu darbu vidurki.
+Galutinis balas = 0.4*ND vidurkis + egzamino pazymys.
+
+Kiekvienas failas isbandytas 3 kartus. Pries kiekviena bandyma duomenys is naujo nuskaitomi is to paties is anksto sugeneruoto failo. Failu generavimas i apdorojimo laika neitrauktas
+
+Laikas matuojamas naudojant std::chrono::steady_clock.
+Pateikti triju bandymu aritmetiniai vidurkiai sekundemis.
+
+Studentu skc|Nuskaitymas, s|Skirstymas, s|Abieju failu irasymas, s|Bendras laikas,s|
+
+| 1 000 | 0.007466 | 0.000124 | 0.011845 | 0.019436 |
+| 10 000 | 0.059809 | 0.000530 | 0.017770 | 0.078109 |
+| 100 000 | 0.505640 | 0.004893 | 0.142124 | 0.652658 |
+| 1 000 000 | 5.185562 | 0.064612 | 1.627595 | 6.877770 |
+| 10 000 000 | 54.912419 | 1.266966 | 14.488489 | 70.667874 |
+
+Visu bandymu duomenys pateikti matavimai.txt
+
+#Rezultatai
+
+Dideliuose failuose daugiausiai laiko uzima nuskaitymas: mazdaug 75% procentus bendros trukmes. Skirstymas i grupes trunka greokai trumpiau nei nuskaitymas ar rezultatu irasymas.
+
+Visuose bandymuose abieju grupiu studentu skaiciu suma sutapo su nuskaitytu studentu skaiciumi.
