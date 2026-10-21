@@ -7,6 +7,7 @@
 #include <random>
 #include <fstream>
 #include "funkcijos.h"
+#include <list>
 
 using namespace std;
 
@@ -14,6 +15,7 @@ using namespace std;
 
 int main(){
   vector<Studentas> studentai;
+  list<Studentas> studentaiList;
   mt19937 generatorius(random_device{}());
 
   while(true) {
@@ -26,7 +28,13 @@ int main(){
     int veiksmas=ivestiSkaiciu("Pasirinkimas: ", 0, 8);
     if (veiksmas==0||veiksmas==-1) break;
     if(veiksmas==1){
-        if (!ivestiStudenta(studentai)) break;
+        int konteineris=ivestiSkaiciu("1 - vector, 2 - list: ", 1, 2);
+        if(konteineris==-1) break;
+        if(konteineris==1){
+            if(!ivestiStudenta(studentai)) break;
+        }else{
+            if(!ivestiStudenta(studentaiList)) break;
+        }
     }else if (veiksmas==3){
         if (!generuotiStudenta(studentai, generatorius)) break;
     }else if (veiksmas==4){

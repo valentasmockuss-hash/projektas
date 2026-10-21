@@ -64,8 +64,8 @@ double mediana(vector<int> nd){
 double galutinis(double ndRezultatas, int egzaminas){
     return 0.4*ndRezultatas + 0.6*egzaminas;
 }
-
-bool ivestiStudenta(vector<Studentas>& studentai){
+template <typename Konteineris>
+bool ivestiStudentaBendrai(Konteineris& studentai){
     Studentas studentas;
     if(!ivestiVarda("Vardas: ", studentas.vardas)) return false;
     if(!ivestiVarda("Pavarde: ", studentas.pavarde)) return false;
@@ -91,8 +91,21 @@ bool ivestiStudenta(vector<Studentas>& studentai){
     if(studentas.egzaminas==-1) return false;
 
     studentai.push_back(studentas);
+    const Studentas& irasytas=studentai.back();
+
+    cout<<"Ivestas studentas: "<<irasytas.vardas<<" "<<irasytas.pavarde<<"\nND: ";
+    for (int pazymys : irasytas.nd) cout<<pazymys<<' ';
+    cout<<"\nEgzaminas: "<<irasytas.egzaminas<<"\nAdresas atmintyje: "<<&irasytas<<'\n';
+
     return true;
     
+}
+
+bool ivestiStudenta(vector<Studentas>& studentai){
+    return ivestiStudentaBendrai(studentai);
+}
+bool ivestiStudenta(list<Studentas>&studentai){
+    return ivestiStudentaBendrai(studentai);
 }
 
 size_t simboliuKiekis(const string& tekstas){

@@ -5,6 +5,7 @@
 #include <ostream>
 #include <random>
 #include <cstddef>
+#include <list>
 
 int ivestiSkaiciu (const std::string& klausimas, int nuo, int iki);
 
@@ -13,10 +14,13 @@ double mediana(std::vector<int> nd);
 double galutinis(double ndRezultatas, int egzaminas);
 
 bool ivestiStudenta(std::vector<Studentas>& studentai);
+bool ivestiStudenta(std::list<Studentas>& studentai);
 bool generuotiStudenta(std::vector<Studentas>&studentai,
     std::mt19937&generatorius);
 bool skaitytiFaila( const std::string&kelias,
     std::vector<Studentas>&studentai);
+bool skaitytiFaila(const std::string&kelias,
+    std::list<Studentas>&studentai);
 
 void spausdinti(const std::vector<Studentas>& studentai,
     std::ostream&isvestis,
