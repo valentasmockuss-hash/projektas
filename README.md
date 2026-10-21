@@ -74,12 +74,16 @@ Kiekvienas failas isbandytas 3 kartus. Pries kiekviena bandyma duomenys is naujo
 Laikas matuojamas naudojant std::chrono::steady_clock.
 Pateikti triju bandymu aritmetiniai vidurkiai sekundemis.
 
-Studentu skc|Nuskaitymas, s|Skirstymas, s|Abieju failu irasymas, s|Bendras laikas,s|
+|Studentu skc|Nuskaitymas, s|Skirstymas, s|Abieju failu irasymas, s|Bendras laikas,s|
 
 | 1 000 | 0.007466 | 0.000124 | 0.011845 | 0.019436 |
+
 | 10 000 | 0.059809 | 0.000530 | 0.017770 | 0.078109 |
+
 | 100 000 | 0.505640 | 0.004893 | 0.142124 | 0.652658 |
+
 | 1 000 000 | 5.185562 | 0.064612 | 1.627595 | 6.877770 |
+
 | 10 000 000 | 54.912419 | 1.266966 | 14.488489 | 70.667874 |
 
 Visu bandymu duomenys pateikti matavimai.txt
@@ -87,9 +91,13 @@ Visu bandymu duomenys pateikti matavimai.txt
 #Failu generavimo trukmes 
 
 | 1 000 | 0.002892 |
+
 | 10 000 | 0.012358 |
+
 | 100 000 | 0.111678 |
+
 | 1 000 000 | 1.104431 |
+
 | 10 000 000 | 11.234791 |
 
 
