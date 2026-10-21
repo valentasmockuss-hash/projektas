@@ -7,6 +7,7 @@
 #include <fstream>
 #include <chrono>
 #include <list>
+#include <iterator>
 
 using namespace std;
 
@@ -302,6 +303,14 @@ size_t skirstytiStudentus(vector<Studentas>& studentai, int budas) {
     return static_cast<size_t>(riba-studentai.begin());
 }
 
+size_t skirstytiStudentus(list<Studentas>& studentai, int budas){
+    auto riba=partition(studentai.begin(), studentai.end(),
+        [budas](const Studentas&s){
+            return studentoBalas(s, budas)<5.0;
+        });
+    return static_cast<size_t>(distance(studentai.begin(), riba));
+}
+
 bool irasytiGrupe(const vector<Studentas>& studentai, size_t nuo,
                     size_t iki, const string& kelias, int budas){
     ofstream failas(kelias);
@@ -313,6 +322,26 @@ bool irasytiGrupe(const vector<Studentas>& studentai, size_t nuo,
         const Studentas& s=studentai[i];
 
         failas<<s.pavarde<<' '<<s.vardas<<' '<<studentoBalas(s, budas)<<'\n';
+    }
+    failas.close();
+    return static_cast<bool>(failas);
+ }
+
+ bool irasytiGrupe(const list<Studentas>& studentai, size_t nuo,
+                    size_t iki, const string&kelias, int budas){
+    ofstream failas(kelias);
+    if(!failas) return false;
+
+    failas<<"Pavarde Vardas Galutinis\n";
+    failas<<fixed<<setprecision(2);
+
+    size_t i=0;
+    for(const Studentas& s : studentai){
+        if(i>=iki) break;
+        if(i>=nuo){
+            failas<<s.pavarde<<' '<<s.vardas<<' '<<studentoBalas(s, budas)<<'\n';
+        }
+        ++i;
     }
     failas.close();
     return static_cast<bool>(failas);

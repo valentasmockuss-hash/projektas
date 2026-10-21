@@ -63,26 +63,37 @@ int main(){
         tirtiSparta(kelias, budas);
     
     } else if (veiksmas==7){
-        if (studentai.empty()){
-            cout<<"Pirmiausia nuskaitykite arba iveskite studentus.\n";
-            continue;
+        int konteineris=ivestiSkaiciu("1 - vector, 2 - list: ", 1, 2);
+        if(konteineris==-1) break;
+
+        if((konteineris==1 && studentai.empty()) ||
+            (konteineris==2 && studentaiList.empty())){
+                cout<<"Pirmiausia nuskaitykite arba iveskite studentus.\n";
+                continue;
+            }
+        int budas=ivestiSkaiciu("Skirstyti pagal: 1 - vidurki, 2 - mediana: ",1 , 2);
+        if(budas==-1) break;
+
+        size_t riba, kiek;
+        bool pirmas, antras;
+
+        if(konteineris==1){
+            kiek=studentai.size();
+            riba=skirstytiStudentus(studentai, budas);
+            pirmas=irasytiGrupe(studentai, 0, riba, "vargsiukai.txt", budas);
+            antras=irasytiGrupe(studentai, riba, kiek, "kietiakai.txt", budas);
+        }else{
+            kiek=studentaiList.size();
+            riba=skirstytiStudentus(studentaiList, budas);
+            pirmas=irasytiGrupe(studentaiList, 0, riba, "vargsiukai.txt", budas);
+            antras=irasytiGrupe(studentaiList, riba, kiek, "kietiakai.txt", budas);
         }
-        int budas=ivestiSkaiciu("Skirstyti pagal: 1 - vidurki, 2 - mediana: ", 1, 2);
-        if (budas==-1) break;
 
-        size_t riba=skirstytiStudentus(studentai, budas);
-
-        bool pirmas=irasytiGrupe(
-            studentai, 0, riba, "vargsiukai.txt", budas);
-        
-        bool antras=irasytiGrupe(
-            studentai, riba, studentai.size(), "kietiakai.txt", budas);
-        
-        if (pirmas&&antras){
-            cout<<"Vargsiuku: " <<riba<<'\n';
-            cout<<"Kietiaku: "<<studentai.size() - riba<<'\n';
+        if(pirmas && antras){
+            cout<<"Vargsiuku: "<<riba<<'\n';
+            cout<<"Kietiaku: "<<kiek-riba<<'\n';
             cout<<"Grupes issaugotos i du failus.\n";
-        } else{
+        }else{
             cout<<"Klaida irasant grupiu failus.\n";
         }
     }else {

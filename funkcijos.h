@@ -34,11 +34,22 @@ std::size_t skirstytiStudentus(
     std::vector<Studentas>& studentai, int budas
 );
 
+std::size_t skirstytiStudentus(
+    std::list<Studentas>& studentai, int budas
+);
+
 bool irasytiGrupe(
     const std::vector<Studentas>& studentai,
     std::size_t nuo, std::size_t iki,
     const std::string&kelias, int budas
 );
+
+bool irasytiGrupe(
+    const std::list<Studentas>& studentai,
+    std::size_t nuo, std::size_t iki,
+    const std::string& kelias, int budas
+);
+
 void tirtiSparta(const std::string&kelias, int budas);
 
 #endif
