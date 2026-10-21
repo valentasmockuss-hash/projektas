@@ -6,6 +6,7 @@
 #include <sstream>
 #include <fstream>
 #include <chrono>
+#include <list>
 
 using namespace std;
 
@@ -152,7 +153,8 @@ bool generuotiStudenta(vector<Studentas>& studentai, mt19937& generatorius){
     studentai.push_back(studentas);
     return true;
 }
-bool skaitytiFaila(const string& kelias, vector<Studentas>& studentai){
+template <typename Konteineris>
+bool skaitytiFailaBendrai(const string& kelias, Konteineris& studentai){
     ifstream failas(kelias);
     if(!failas){
         cout<<"Nepavyko atidaryti failo.\n";
@@ -175,7 +177,7 @@ bool skaitytiFaila(const string& kelias, vector<Studentas>& studentai){
         cout<<"Antrasteje turi buti Vardas Pavarde arba Pavarde Vardas.\n";
         return false;
     }
-    vector<Studentas> nuskaityti;
+    Konteineris nuskaityti;
     size_t numeris=1;
     while (getline(failas, eilute)) {
         ++numeris;
@@ -209,6 +211,14 @@ bool skaitytiFaila(const string& kelias, vector<Studentas>& studentai){
     cout<<"Nuskaityta studentu:"<<studentai.size() << '\n';
     return true;
 }
+bool skaitytiFaila(const string&kelias, vector<Studentas>&studentai){
+    return skaitytiFailaBendrai(kelias, studentai);
+}
+
+bool skaitytiFaila(const string&kelias, list<Studentas>& studentai){
+    return skaitytiFailaBendrai(kelias, studentai);
+}
+
 bool pagalPavarde(const Studentas& a, const Studentas& b){
     if (a.pavarde==b.pavarde) return a.vardas<b.vardas;
     return a.pavarde<b.pavarde;
