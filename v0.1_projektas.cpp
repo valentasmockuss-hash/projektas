@@ -38,10 +38,18 @@ int main(){
     }else if (veiksmas==3){
         if (!generuotiStudenta(studentai, generatorius)) break;
     }else if (veiksmas==4){
-        cout<<"Failo pavadinimas: ";
-        string kelias;
-        if(!getline(cin, kelias)) break;
+    int konteineris=ivestiSkaiciu("1 - vector, 2 - list: ", 1, 2);
+    if(konteineris==-1) break;
+
+    cout<<"Failo pavadinimas: ";
+    string kelias;
+    if(!getline(cin, kelias)) break;
+
+    if(konteineris==1){
         skaitytiFaila(kelias, studentai);
+    }else{
+        skaitytiFaila(kelias, studentaiList);
+    }
     } else if (veiksmas==6){
         cout<<"1 - 1000 studentu\n"<<"2 - 10000 studentu\n"<<"3 - 100000 studentu\n"
             <<"4 - 1000000 studentu\n"<<"5 - 10000000 studentu\n";
