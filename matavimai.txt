@@ -400,3 +400,207 @@ Skirstymas: 0.000082
 Vargsiuku irasymas: 0.005524
 Kietiaku irasymas: 0.002199
 Bendras laikas: 0.015652
+
+Konteineris: vector
+
+Failas: gen_studentai10000.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 10000
+Vargsiuku: 4102
+Kietiaku: 5898
+Skaitymas: 0.075923 s
+Skirstymas: 0.000471 s
+Vargsiuku irasymas: 0.006726 s
+Kietiaku irasymas: 0.010885 s
+Bendras laikas: 0.094005 s
+
+Konteineris: vector
+
+Failas: gen_studentai10000.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 10000
+Vargsiuku: 4102
+Kietiaku: 5898
+Skaitymas: 0.068654 s
+Skirstymas: 0.000499 s
+Vargsiuku irasymas: 0.006388 s
+Kietiaku irasymas: 0.008352 s
+Bendras laikas: 0.083892 s
+
+Konteineris: vector
+
+Failas: gen_studentai10000.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 10000
+Vargsiuku: 4102
+Kietiaku: 5898
+Skaitymas: 0.060763 s
+Skirstymas: 0.000552 s
+Vargsiuku irasymas: 0.006202 s
+Kietiaku irasymas: 0.008356 s
+Bendras laikas: 0.075873 s
+
+Konteineris: vector
+Failas: gen_studentai10000.txt
+triju bandymu vidurkiai (s):
+Skaitymas: 0.068446
+Skirstymas: 0.000507
+Vargsiuku irasymas: 0.006439
+Kietiaku irasymas: 0.009198
+Bendras laikas: 0.084590
+
+Konteineris: list
+
+Failas: gen_studentai10000.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 10000
+Vargsiuku: 4102
+Kietiaku: 5898
+Skaitymas: 0.053896 s
+Skirstymas: 0.000836 s
+Vargsiuku irasymas: 0.006162 s
+Kietiaku irasymas: 0.008543 s
+Bendras laikas: 0.069437 s
+
+Konteineris: list
+
+Failas: gen_studentai10000.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 10000
+Vargsiuku: 4102
+Kietiaku: 5898
+Skaitymas: 0.056072 s
+Skirstymas: 0.001011 s
+Vargsiuku irasymas: 0.007157 s
+Kietiaku irasymas: 0.009293 s
+Bendras laikas: 0.073533 s
+
+Konteineris: list
+
+Failas: gen_studentai10000.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 10000
+Vargsiuku: 4102
+Kietiaku: 5898
+Skaitymas: 0.054812 s
+Skirstymas: 0.000812 s
+Vargsiuku irasymas: 0.006003 s
+Kietiaku irasymas: 0.008821 s
+Bendras laikas: 0.070448 s
+
+Konteineris: list
+Failas: gen_studentai10000.txt
+triju bandymu vidurkiai (s):
+Skaitymas: 0.054927
+Skirstymas: 0.000887
+Vargsiuku irasymas: 0.006440
+Kietiaku irasymas: 0.008886
+Bendras laikas: 0.071140
+
+Konteineris: vector
+
+Failas: gen_studentai100000.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 100000
+Vargsiuku: 41400
+Kietiaku: 58600
+Skaitymas: 0.626859 s
+Skirstymas: 0.004635 s
+Vargsiuku irasymas: 0.061274 s
+Kietiaku irasymas: 0.094739 s
+Bendras laikas: 0.787506 s
+
+Konteineris: vector
+
+Failas: gen_studentai100000.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 100000
+Vargsiuku: 41400
+Kietiaku: 58600
+Skaitymas: 0.593915 s
+Skirstymas: 0.004908 s
+Vargsiuku irasymas: 0.076947 s
+Kietiaku irasymas: 0.097974 s
+Bendras laikas: 0.773744 s
+
+Konteineris: vector
+
+Failas: gen_studentai100000.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 100000
+Vargsiuku: 41400
+Kietiaku: 58600
+Skaitymas: 0.527665 s
+Skirstymas: 0.004574 s
+Vargsiuku irasymas: 0.062373 s
+Kietiaku irasymas: 0.083150 s
+Bendras laikas: 0.677762 s
+
+Konteineris: vector
+Failas: gen_studentai100000.txt
+triju bandymu vidurkiai (s):
+Skaitymas: 0.582813
+Skirstymas: 0.004706
+Vargsiuku irasymas: 0.066865
+Kietiaku irasymas: 0.091954
+Bendras laikas: 0.746337
+
+Konteineris: list
+
+Failas: gen_studentai100000.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 100000
+Vargsiuku: 41400
+Kietiaku: 58600
+Skaitymas: 0.542265 s
+Skirstymas: 0.009448 s
+Vargsiuku irasymas: 0.069029 s
+Kietiaku irasymas: 0.092538 s
+Bendras laikas: 0.713281 s
+
+Konteineris: list
+
+Failas: gen_studentai100000.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 100000
+Vargsiuku: 41400
+Kietiaku: 58600
+Skaitymas: 0.564088 s
+Skirstymas: 0.009090 s
+Vargsiuku irasymas: 0.065646 s
+Kietiaku irasymas: 0.089341 s
+Bendras laikas: 0.728164 s
+
+Konteineris: list
+
+Failas: gen_studentai100000.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 100000
+Vargsiuku: 41400
+Kietiaku: 58600
+Skaitymas: 0.630495 s
+Skirstymas: 0.013776 s
+Vargsiuku irasymas: 0.072813 s
+Kietiaku irasymas: 0.093119 s
+Bendras laikas: 0.810202 s
+
+Konteineris: list
+Failas: gen_studentai100000.txt
+triju bandymu vidurkiai (s):
+Skaitymas: 0.578949
+Skirstymas: 0.010772
+Vargsiuku irasymas: 0.069163
+Kietiaku irasymas: 0.091666
+Bendras laikas: 0.750549
