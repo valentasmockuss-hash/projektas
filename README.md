@@ -67,7 +67,7 @@ maziau nei 5 - vargsiukai.txt,
 #Spartos tyrimis
 
 Tyrimas atliktas pagal namu darbu vidurki.
-Galutinis balas = 0.4*ND vidurkis + egzamino pazymys.
+Galutinis balas = 0.4*ND vidurkis + 0.6*egzamino pazymys.
 
 Kiekvienas failas isbandytas 3 kartus. Pries kiekviena bandyma duomenys is naujo nuskaitomi is to paties is anksto sugeneruoto failo. Failu generavimas i apdorojimo laika neitrauktas
 
@@ -107,3 +107,20 @@ Dideliuose failuose daugiausiai laiko uzima nuskaitymas: mazdaug 75% procentus b
 
 Visuose bandymuose abieju grupiu studentu skaiciu suma sutapo su nuskaitytu studentu skaiciumi.
 
+#Versija v0.3 vector ir list palyginimas
+
+ Kiekvienam konteineriui naudotas tas pats atitinkamo dydzio duomenu failas. Studentai pagal galutini bala suskirstyti i vargsiukus (balas < 5) ir kietiakus (balas >= 5). Laikas matuotas su std::chrono::steady_clock; lenteleje pateikti triju bandymu vidurkiai sekundemis. Failu generavimas i si laika neitrauktas.
+
+| Studentu | Konteineris | Skaitymas, s | Skirstymas, s | Abieju failu irasymas, s | Bendras laikas, s |
+| 1000 | vector | 0.017465 | 0.000067 | 0.112854 | 0.130386 |
+| 1000 | list | 0.007848 | 0.000082 | 0.007723 | 0.015652 |
+| 10000 | vector | 0.068446 | 0.000507 | 0.015637 | 0.084590 |
+| 10000 | list | 0.054927 | 0.000887 | 0.015326 | 0.071140 |
+| 100000 | vector | 0.582813 | 0.004706 | 0.158819 | 0.746337 |
+| 100000 | list | 0.578949 | 0.010772 | 0.160829 | 0.750549 |
+| 1000000 | vector | 5.290023 | 0.056593 | 1.460275 | 6.806890 |
+| 1000000 | list | 5.148942 | 0.094643 | 1.482446 | 6.726031 |
+| 10000000 | vector | 50.905487 | 0.554148 | 14.136797 | 65.596432 |
+| 10000000 | list | 50.148580 | 0.947090 | 15.498790 | 66.594459 |
+
+Skirstant 10 mln studentu vector uztruko vidutiniskai 0.554148s, list - 0.947090s. Bendras apdorojimo laikas buvo 65.596432s ir 66.594459s. 
