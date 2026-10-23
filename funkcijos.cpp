@@ -353,7 +353,8 @@ template <typename Konteineris>
         cout<<"Nepavyko atidaryti matavimo failo.\n";
         return;
     }
-
+    double skaitymuSuma=0, skirstymuSuma=0;
+    double vargsiukuSuma=0, kietiakuSuma=0, bendraSuma=0;
     for(int bandymas=1; bandymas<=3; ++bandymas){
         Konteineris duomenys;
         cout<<"\nBandymas "<<bandymas<<" is 3\n";
@@ -383,6 +384,13 @@ template <typename Konteineris>
         double antroIrasymas=chrono::duration<double>(t4-t3).count();
         double visas=chrono::duration<double>(t4-t0).count();
 
+        skaitymuSuma+=skaitymas;
+        skirstymuSuma+=skirstymas;
+        vargsiukuSuma+=pirmoIrasymas;
+        kietiakuSuma+=antroIrasymas;
+        bendraSuma+=visas;
+
+
         ostringstream ataskaita;
         ataskaita<<fixed<<setprecision(6)
         <<"\nKonteineris: "<<tipas<<'\n'
@@ -407,7 +415,23 @@ template <typename Konteineris>
             return;
         }
     }
-    cout<<"Matavimai prideti i matavimai.txt\n";
+    ostringstream vidurkiai;
+    vidurkiai<<fixed<<setprecision(6)
+        <<"\nKonteineris: "<<tipas<<'\n'
+        <<"Failas: "<<kelias<<'\n'
+        <<"triju bandymu vidurkiai (s):\n"
+        <<"Skaitymas: "<<skaitymuSuma/3.0<<'\n'
+        <<"Skirstymas: "<<skirstymuSuma/3.0<<'\n'
+        <<"Vargsiuku irasymas: "<<vargsiukuSuma/3.0<<'\n'
+        <<"Kietiaku irasymas: "<<kietiakuSuma/3.0<<'\n'
+        <<"Bendras laikas: "<<bendraSuma/3.0<<'\n';
+
+    cout<<vidurkiai.str();
+    zurnalas<<vidurkiai.str();
+    zurnalas.flush();
+    if(!zurnalas){
+        cout<<"Klaida issaugant vidurkius.\n";
+    }
  }
  void tirtiSparta(const string& kelias, int budas, int konteineris){
     if(konteineris==1){

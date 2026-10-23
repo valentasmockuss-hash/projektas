@@ -298,3 +298,105 @@ Skirstymas: 0.000071 s
 Vargsiuku irasymas: 0.005569 s
 Kietiaku irasymas: 0.001538 s
 Bendras laikas: 0.016880 s
+
+Konteineris: vector
+
+Failas: gen_studentai1000.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 1000
+Vargsiuku: 430
+Kietiaku: 570
+Skaitymas: 0.006392 s
+Skirstymas: 0.000053 s
+Vargsiuku irasymas: 0.002124 s
+Kietiaku irasymas: 0.001668 s
+Bendras laikas: 0.010237 s
+
+Konteineris: vector
+
+Failas: gen_studentai1000.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 1000
+Vargsiuku: 430
+Kietiaku: 570
+Skaitymas: 0.040277 s
+Skirstymas: 0.000102 s
+Vargsiuku irasymas: 0.003198 s
+Kietiaku irasymas: 0.324791 s
+Bendras laikas: 0.368368 s
+
+Konteineris: vector
+
+Failas: gen_studentai1000.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 1000
+Vargsiuku: 430
+Kietiaku: 570
+Skaitymas: 0.005726 s
+Skirstymas: 0.000046 s
+Vargsiuku irasymas: 0.001417 s
+Kietiaku irasymas: 0.005364 s
+Bendras laikas: 0.012553 s
+
+Konteineris: vector
+Failas: gen_studentai1000.txt
+triju bandymu vidurkiai (s):
+Skaitymas: 0.017465
+Skirstymas: 0.000067
+Vargsiuku irasymas: 0.002246
+Kietiaku irasymas: 0.110608
+Bendras laikas: 0.130386
+
+Konteineris: list
+
+Failas: gen_studentai1000.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 1000
+Vargsiuku: 430
+Kietiaku: 570
+Skaitymas: 0.005630 s
+Skirstymas: 0.000062 s
+Vargsiuku irasymas: 0.001122 s
+Kietiaku irasymas: 0.001259 s
+Bendras laikas: 0.008073 s
+
+Konteineris: list
+
+Failas: gen_studentai1000.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 1000
+Vargsiuku: 430
+Kietiaku: 570
+Skaitymas: 0.010924 s
+Skirstymas: 0.000113 s
+Vargsiuku irasymas: 0.007661 s
+Kietiaku irasymas: 0.001354 s
+Bendras laikas: 0.020051 s
+
+Konteineris: list
+
+Failas: gen_studentai1000.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 1000
+Vargsiuku: 430
+Kietiaku: 570
+Skaitymas: 0.006989 s
+Skirstymas: 0.000071 s
+Vargsiuku irasymas: 0.007790 s
+Kietiaku irasymas: 0.003983 s
+Bendras laikas: 0.018833 s
+
+Konteineris: list
+Failas: gen_studentai1000.txt
+triju bandymu vidurkiai (s):
+Skaitymas: 0.007848
+Skirstymas: 0.000082
+Vargsiuku irasymas: 0.005524
+Kietiaku irasymas: 0.002199
+Bendras laikas: 0.015652
