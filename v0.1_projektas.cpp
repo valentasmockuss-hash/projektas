@@ -68,7 +68,9 @@ int main(){
         if(!getline(cin, kelias)) break;
         int budas=ivestiSkaiciu("1 - vidurkis, 2 - mediana: ", 1, 2);
         if(budas==-1) break;
-        tirtiSparta(kelias, budas);
+        int konteineris=ivestiSkaiciu("1 - vector, 2 - list: ", 1, 2);
+        if(konteineris==-1) break;
+        tirtiSparta(kelias, budas, konteineris);
     
     } else if (veiksmas==7){
         int konteineris=ivestiSkaiciu("1 - vector, 2 - list: ", 1, 2);

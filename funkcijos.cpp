@@ -346,8 +346,8 @@ bool irasytiGrupe(const vector<Studentas>& studentai, size_t nuo,
     failas.close();
     return static_cast<bool>(failas);
  }
-
- void tirtiSparta (const string& kelias, int budas){
+template <typename Konteineris>
+ void tirtiSpartaBendrai (const string& kelias, int budas, const string& tipas){
     ofstream zurnalas("matavimai.txt", ios::app);
     if (!zurnalas){
         cout<<"Nepavyko atidaryti matavimo failo.\n";
@@ -355,7 +355,7 @@ bool irasytiGrupe(const vector<Studentas>& studentai, size_t nuo,
     }
 
     for(int bandymas=1; bandymas<=3; ++bandymas){
-        vector<Studentas> duomenys;
+        Konteineris duomenys;
         cout<<"\nBandymas "<<bandymas<<" is 3\n";
 
         auto t0=chrono::steady_clock::now();
@@ -385,6 +385,7 @@ bool irasytiGrupe(const vector<Studentas>& studentai, size_t nuo,
 
         ostringstream ataskaita;
         ataskaita<<fixed<<setprecision(6)
+        <<"\nKonteineris: "<<tipas<<'\n'
         <<"\nFailas: "<<kelias<<'\n'
         <<"Budas: "<<(budas==1?"vidurkis" : "mediana")<<'\n'
         <<"Bandymas: "<<bandymas<<'\n'
@@ -407,4 +408,11 @@ bool irasytiGrupe(const vector<Studentas>& studentai, size_t nuo,
         }
     }
     cout<<"Matavimai prideti i matavimai.txt\n";
+ }
+ void tirtiSparta(const string& kelias, int budas, int konteineris){
+    if(konteineris==1){
+        tirtiSpartaBendrai<vector<Studentas>>(kelias, budas, "vector");
+    }else{
+        tirtiSpartaBendrai<list<Studentas>>(kelias, budas, "list");
+    }
  }

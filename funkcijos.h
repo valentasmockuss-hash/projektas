@@ -50,6 +50,6 @@ bool irasytiGrupe(
     const std::string& kelias, int budas
 );
 
-void tirtiSparta(const std::string&kelias, int budas);
+void tirtiSparta(const std::string&kelias, int budas, int konteineris);
 
 #endif
