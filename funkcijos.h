@@ -52,4 +52,12 @@ bool irasytiGrupe(
 
 void tirtiSparta(const std::string&kelias, int budas, int konteineris);
 
+void SkirstytiPirma(const std::vector<Studentas>&studentai,
+                    std::vector<Studentas>&vargsiukai,
+                    std::vector<Studentas>&kietiakai, int budas);
+
+void skirstytiPirma(const std::list<Studentas>&studentai,
+                    std::vector<Studentas>&vargsiukai,
+                    std::vector<Studentas>&kietiakai, int budas);
+
 #endif

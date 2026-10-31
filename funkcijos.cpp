@@ -440,3 +440,29 @@ template <typename Konteineris>
         tirtiSpartaBendrai<list<Studentas>>(kelias, budas, "list");
     }
  }
+
+ template <typename Konteineris>
+ void skirstytiPirmaBendrai(const Konteineris& studentai, Konteineris&vargsiukai, Konteineris&kietiakai, int budas){
+    vargsiukai.clear();
+    kietiakai.clear();
+
+    for(const Studentas& s:studentai){
+        if(studentoBalas(s, budas)<5.0){
+            vargsiukai.push_back(s);
+        }else{
+            kietiakai.push_back(s);
+        }
+    }
+ }
+
+ void skirstytiPirma(const vector<Studentas>&studentai,
+                    vector<Studentas>&vargsiukai,
+                    vector<Studentas>&kietiakai, int budas){
+        skirstytiPirmaBendrai(studentai, vargsiukai, kietiakai, budas);
+}
+
+ void skirstytiPirma(const list<Studentas>&studentai,
+                    list<Studentas>&vargsiukai,
+                    list<Studentas>&kietiakai, int budas){
+        skirstytiPirmaBendrai(studentai, vargsiukai, kietiakai, budas);
+}
