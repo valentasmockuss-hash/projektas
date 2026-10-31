@@ -466,3 +466,29 @@ template <typename Konteineris>
                     list<Studentas>&kietiakai, int budas){
         skirstytiPirmaBendrai(studentai, vargsiukai, kietiakai, budas);
 }
+
+void skirstytiAntra(vector<Studentas>&studentai, vector<Studentas>&vargsiukai, int budas){
+    vargsiukai.clear();
+    size_t i=0;
+
+    while(i< studentai.size()){
+        if(studentoBalas(studentai[i], budas)<5.0){
+            vargsiukai.push_back(studentai[i]);
+            studentai[i]=studentai.back();
+            studentai.pop_back();
+        }else{
+            ++i;
+        }
+    }
+}
+void skirstytiAntra(list<Studentas>&studentai, list<Studentas>&vargsiukai, int budas){
+    vargsiukai.clear();
+    auto it=studentai.begin();
+
+    while(it!=studentai.end()){
+        if(studentoBalas(*it, budas)<5.0){
+            vargsiukai.push_back(*it);
+            it=studentai.erase(it);
+        }
+    }
+}

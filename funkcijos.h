@@ -60,4 +60,10 @@ void skirstytiPirma(const std::list<Studentas>&studentai,
                     std::list<Studentas>&vargsiukai,
                     std::list<Studentas>&kietiakai, int budas);
 
+void skirstytiAntra(std::vector<Studentas>& studentai,
+                   std::vector<Studentas>& vargsiukai, int budas);
+
+void skirstytiAntra(std::list<Studentas>&studentai,
+                   std::list<Studentas>&vargsiukai, int budas);
+
 #endif
