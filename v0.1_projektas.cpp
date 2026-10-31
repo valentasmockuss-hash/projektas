@@ -88,15 +88,21 @@ int main(){
         bool pirmas, antras;
 
         if(konteineris==1){
+            vector<Studentas> vargsiukai, kietiakai;
             kiek=studentai.size();
-            riba=skirstytiStudentus(studentai, budas);
-            pirmas=irasytiGrupe(studentai, 0, riba, "vargsiukai.txt", budas);
-            antras=irasytiGrupe(studentai, riba, kiek, "kietiakai.txt", budas);
+            skirstytiPirma(studentai, vargsiukai, kietiakai, budas);
+            riba=vargsiukai.size();
+
+            pirmas=irasytiGrupe(vargsiukai, 0, riba, "vargsiukai.txt", budas);
+            antras=irasytiGrupe(kietiakai, 0, kietiakai.size(), "kietiakai.txt", budas);
         }else{
+            list<Studentas> vargsiukai, kietiakai;
             kiek=studentaiList.size();
-            riba=skirstytiStudentus(studentaiList, budas);
-            pirmas=irasytiGrupe(studentaiList, 0, riba, "vargsiukai.txt", budas);
-            antras=irasytiGrupe(studentaiList, riba, kiek, "kietiakai.txt", budas);
+            skirstytiPirma(studentaiList, vargsiukai, kietiakai, budas);
+            riba=vargsiukai.size();
+
+            pirmas=irasytiGrupe(vargsiukai, 0, riba, "vargsiukai.txt", budas);
+            antras=irasytiGrupe(kietiakai, 0, kietiakai.size(), "kietiakai.txt", budas);
         }
 
         if(pirmas && antras){

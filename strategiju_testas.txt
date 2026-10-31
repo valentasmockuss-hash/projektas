@@ -1,0 +1,4 @@
+Vardas Pavarde ND1 Egzaminas
+Jonas Jonaitis 2 2
+Ona Onaite 8 8
+Petras Petraitis 5 5
