@@ -494,3 +494,26 @@ void skirstytiAntra(list<Studentas>&studentai, list<Studentas>&vargsiukai, int b
         }
     }
 }
+
+void skirstytiTrecia(vector<Studentas>& studentai, vector<Studentas>&vargsiukai, int budas){
+    auto riba=partition(studentai.begin(), studentai.end(),
+            [budas](const Studentas&s){
+                return studentoBalas(s, budas)>=5.0;
+            });
+    vargsiukai.assign(make_move_iterator(riba), make_move_iterator(studentai.end()));
+    studentai.erase(riba, studentai.end());
+}
+
+void skirstytiTrecia(list<Studentas>&studentai,
+                    list<Studentas>&vargsiukai, int budas){
+    vargsiukai.clear();
+    auto it=studentai.begin();
+    
+    while(it!=studentai.end()){
+        auto dabartinis=it;
+        ++it;
+        if(studentoBalas(*dabartinis, budas)<5.0){
+            vargsiukai.splice(vargsiukai.end(), studentai, dabartinis);
+        }
+    }
+}

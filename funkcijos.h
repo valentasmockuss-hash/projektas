@@ -66,4 +66,9 @@ void skirstytiAntra(std::vector<Studentas>& studentai,
 void skirstytiAntra(std::list<Studentas>&studentai,
                    std::list<Studentas>&vargsiukai, int budas);
 
+void skirstytiTrecia(std::vector<Studentas>& studentai,
+                    std::vector<Studentas>&vargsiukai, int budas);
+void skirstytiTrecia(std::list<Studentas>&studentai,
+                    std::list<Studentas>&vargsiukai, int budas);
+
 #endif

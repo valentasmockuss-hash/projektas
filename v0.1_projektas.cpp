@@ -84,7 +84,7 @@ int main(){
         int budas=ivestiSkaiciu("Skirstyti pagal: 1 - vidurki, 2 - mediana: ",1 , 2);
         if(budas==-1) break;
 
-        int strategija=ivestiSkaiciu("Strategija: 1 - du nauji, 2 - vienas naujas: ", 1, 2);
+        int strategija=ivestiSkaiciu("Strategija: 1 - du nauji, 2 - vienas naujas, 3 - optimizuota: ", 1, 3);
         if(strategija==-1) break;
 
         size_t riba, kiek;
@@ -99,7 +99,11 @@ int main(){
                 skirstytiPirma(studentai, vargsiukai, kietiakai, budas);
                 antras=irasytiGrupe(kietiakai, 0, kietiakai.size(), "kietiakai.txt", budas);
             }else{
-                skirstytiAntra(studentai, vargsiukai, budas);
+                if(strategija==2){
+                    skirstytiAntra(studentai, vargsiukai, budas);
+                }else{
+                    skirstytiTrecia(studentai, vargsiukai, budas);
+                }
                 antras=irasytiGrupe(studentai, 0, studentai.size(), "kietiakai.txt", budas);
             }
             riba=vargsiukai.size();
@@ -114,7 +118,11 @@ int main(){
                 skirstytiPirma(studentaiList, vargsiukai, kietiakai, budas);
                 antras=irasytiGrupe(kietiakai, 0, kietiakai.size(), "kietiakai.txt", budas);
             }else{
-                skirstytiAntra(studentaiList, vargsiukai, budas);
+                if(strategija==2){
+                    skirstytiAntra(studentaiList, vargsiukai, budas);
+                }else{
+                    skirstytiTrecia(studentaiList, vargsiukai, budas);
+                }
                 antras=irasytiGrupe(studentaiList, 0, studentaiList.size(), "kietiakai.txt", budas);
             }
             riba=vargsiukai.size();
