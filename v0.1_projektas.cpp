@@ -84,25 +84,42 @@ int main(){
         int budas=ivestiSkaiciu("Skirstyti pagal: 1 - vidurki, 2 - mediana: ",1 , 2);
         if(budas==-1) break;
 
+        int strategija=ivestiSkaiciu("Strategija: 1 - du nauji, 2 - vienas naujas: ", 1, 2);
+        if(strategija==-1) break;
+
         size_t riba, kiek;
         bool pirmas, antras;
 
         if(konteineris==1){
-            vector<Studentas> vargsiukai, kietiakai;
+            vector<Studentas> vargsiukai;
             kiek=studentai.size();
-            skirstytiPirma(studentai, vargsiukai, kietiakai, budas);
-            riba=vargsiukai.size();
 
+            if(strategija==1){
+                vector<Studentas> kietiakai;
+                skirstytiPirma(studentai, vargsiukai, kietiakai, budas);
+                antras=irasytiGrupe(kietiakai, 0, kietiakai.size(), "kietiakai.txt", budas);
+            }else{
+                skirstytiAntra(studentai, vargsiukai, budas);
+                antras=irasytiGrupe(studentai, 0, studentai.size(), "kietiakai.txt", budas);
+            }
+            riba=vargsiukai.size();
             pirmas=irasytiGrupe(vargsiukai, 0, riba, "vargsiukai.txt", budas);
-            antras=irasytiGrupe(kietiakai, 0, kietiakai.size(), "kietiakai.txt", budas);
+            cout<<"Pradiniame konteineryje: "<<studentai.size()<<'\n';
         }else{
-            list<Studentas> vargsiukai, kietiakai;
+            list<Studentas> vargsiukai;
             kiek=studentaiList.size();
-            skirstytiPirma(studentaiList, vargsiukai, kietiakai, budas);
-            riba=vargsiukai.size();
 
+            if(strategija==1){
+                list<Studentas> kietiakai;
+                skirstytiPirma(studentaiList, vargsiukai, kietiakai, budas);
+                antras=irasytiGrupe(kietiakai, 0, kietiakai.size(), "kietiakai.txt", budas);
+            }else{
+                skirstytiAntra(studentaiList, vargsiukai, budas);
+                antras=irasytiGrupe(studentaiList, 0, studentaiList.size(), "kietiakai.txt", budas);
+            }
+            riba=vargsiukai.size();
             pirmas=irasytiGrupe(vargsiukai, 0, riba, "vargsiukai.txt", budas);
-            antras=irasytiGrupe(kietiakai, 0, kietiakai.size(), "kietiakai.txt", budas);
+            cout<<"Pradiniame konteineryje: "<<studentaiList.size()<<'\n';
         }
 
         if(pirmas && antras){

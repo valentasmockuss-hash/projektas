@@ -489,6 +489,8 @@ void skirstytiAntra(list<Studentas>&studentai, list<Studentas>&vargsiukai, int b
         if(studentoBalas(*it, budas)<5.0){
             vargsiukai.push_back(*it);
             it=studentai.erase(it);
+        }else{
+            ++it;
         }
     }
 }
