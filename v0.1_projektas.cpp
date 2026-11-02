@@ -70,7 +70,10 @@ int main(){
         if(budas==-1) break;
         int konteineris=ivestiSkaiciu("1 - vector, 2 - list: ", 1, 2);
         if(konteineris==-1) break;
-        tirtiSparta(kelias, budas, konteineris);
+        int strategija=ivestiSkaiciu(
+            "Strategija: 0 - v0.3, 1 - pirma, 2 - antra, 3 - trecia: ", 0, 3);
+        if(strategija==-1) break;
+        tirtiSparta(kelias, budas, konteineris, strategija);
     
     } else if (veiksmas==7){
         int konteineris=ivestiSkaiciu("1 - vector, 2 - list: ", 1, 2);

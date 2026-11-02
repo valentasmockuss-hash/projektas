@@ -50,7 +50,7 @@ bool irasytiGrupe(
     const std::string& kelias, int budas
 );
 
-void tirtiSparta(const std::string&kelias, int budas, int konteineris);
+void tirtiSparta(const std::string&kelias, int budas, int konteineris, int strategija);
 
 void skirstytiPirma(const std::vector<Studentas>&studentai,
                     std::vector<Studentas>&vargsiukai,

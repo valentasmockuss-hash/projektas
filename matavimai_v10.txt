@@ -1,0 +1,55 @@
+
+Konteineris: list
+Strategija: 3
+
+Failas: strategiju_testas.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 3
+Vargsiuku: 1
+Kietiaku: 2
+Skaitymas: 0.000429 s
+Skirstymas: 0.000005 s
+Vargsiuku irasymas: 0.000583 s
+Kietiaku irasymas: 0.000342 s
+Bendras laikas: 0.001359 s
+
+Konteineris: list
+Strategija: 3
+
+Failas: strategiju_testas.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 3
+Vargsiuku: 1
+Kietiaku: 2
+Skaitymas: 0.000355 s
+Skirstymas: 0.000001 s
+Vargsiuku irasymas: 0.000362 s
+Kietiaku irasymas: 0.000447 s
+Bendras laikas: 0.001165 s
+
+Konteineris: list
+Strategija: 3
+
+Failas: strategiju_testas.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 3
+Vargsiuku: 1
+Kietiaku: 2
+Skaitymas: 0.000422 s
+Skirstymas: 0.000001 s
+Vargsiuku irasymas: 0.000528 s
+Kietiaku irasymas: 0.000530 s
+Bendras laikas: 0.001481 s
+
+Konteineris: list
+Strategija: 3
+Failas: strategiju_testas.txt
+triju bandymu vidurkiai (s):
+Skaitymas: 0.000402
+Skirstymas: 0.000002
+Vargsiuku irasymas: 0.000491
+Kietiaku irasymas: 0.000440
+Bendras laikas: 0.001335

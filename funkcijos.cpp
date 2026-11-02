@@ -347,8 +347,8 @@ bool irasytiGrupe(const vector<Studentas>& studentai, size_t nuo,
     return static_cast<bool>(failas);
  }
 template <typename Konteineris>
- void tirtiSpartaBendrai (const string& kelias, int budas, const string& tipas){
-    ofstream zurnalas("matavimai.txt", ios::app);
+ void tirtiSpartaBendrai (const string& kelias, int budas, const string& tipas, int strategija){
+    ofstream zurnalas("matavimai_v10.txt", ios::app);
     if (!zurnalas){
         cout<<"Nepavyko atidaryti matavimo failo.\n";
         return;
@@ -356,22 +356,46 @@ template <typename Konteineris>
     double skaitymuSuma=0, skirstymuSuma=0;
     double vargsiukuSuma=0, kietiakuSuma=0, bendraSuma=0;
     for(int bandymas=1; bandymas<=3; ++bandymas){
-        Konteineris duomenys;
+        Konteineris duomenys, vargsiukai, kietiakai;
         cout<<"\nBandymas "<<bandymas<<" is 3\n";
 
         auto t0=chrono::steady_clock::now();
         if(!skaitytiFaila(kelias, duomenys)) return;
         auto t1=chrono::steady_clock::now();
 
-        size_t riba=skirstytiStudentus(duomenys, budas);
+        size_t kiek=duomenys.size();
+        size_t riba=0;
+
+        if(strategija==0){
+            riba=skirstytiStudentus(duomenys, budas);
+        }else{
+            if(strategija==1){
+                skirstytiPirma(duomenys, vargsiukai, kietiakai, budas);
+            }else if(strategija==2){
+                skirstytiAntra(duomenys, vargsiukai, budas);
+            }else{
+                skirstytiTrecia(duomenys, vargsiukai, budas);
+            }
+            riba=vargsiukai.size();
+        }
         auto t2=chrono::steady_clock::now();
 
-        bool pirmas=irasytiGrupe(
-            duomenys, 0, riba, "vargsiukai.txt", budas);
+        bool pirmas;
+        if(strategija==0){
+            pirmas=irasytiGrupe(duomenys, 0, riba, "vargsiukai.txt", budas);
+        }else{
+            pirmas=irasytiGrupe(vargsiukai, 0, riba, "vargsiukai.txt", budas);
+        }
         auto t3=chrono::steady_clock::now();
 
-        bool antras=irasytiGrupe(
-            duomenys, riba, duomenys.size(), "kietiakai.txt", budas);
+        bool antras;
+        if(strategija==0){
+            antras=irasytiGrupe(duomenys, riba, kiek, "kietiakai.txt", budas);
+        }else if(strategija==1){
+            antras=irasytiGrupe(kietiakai, 0, kietiakai.size(),"kietiakai.txt", budas);
+        }else{
+            antras=irasytiGrupe(duomenys, 0, duomenys.size(),"kietiakai.txt", budas);
+        }
         auto t4=chrono::steady_clock::now();
 
         if(!pirmas||!antras) {
@@ -394,12 +418,13 @@ template <typename Konteineris>
         ostringstream ataskaita;
         ataskaita<<fixed<<setprecision(6)
         <<"\nKonteineris: "<<tipas<<'\n'
+        <<"Strategija: "<<strategija<<'\n'
         <<"\nFailas: "<<kelias<<'\n'
         <<"Budas: "<<(budas==1?"vidurkis" : "mediana")<<'\n'
         <<"Bandymas: "<<bandymas<<'\n'
-        <<"Studentu: "<<duomenys.size()<<'\n'
+        <<"Studentu: "<<kiek<<'\n'
         <<"Vargsiuku: "<<riba<<'\n'
-        <<"Kietiaku: "<<duomenys.size() - riba<<'\n'
+        <<"Kietiaku: "<<kiek - riba<<'\n'
         <<"Skaitymas: "<<skaitymas<<" s\n"
         <<"Skirstymas: "<<skirstymas<<" s\n"
         <<"Vargsiuku irasymas: "<<pirmoIrasymas<<" s\n"
@@ -418,6 +443,7 @@ template <typename Konteineris>
     ostringstream vidurkiai;
     vidurkiai<<fixed<<setprecision(6)
         <<"\nKonteineris: "<<tipas<<'\n'
+        <<"Strategija: "<<strategija<<'\n'
         <<"Failas: "<<kelias<<'\n'
         <<"triju bandymu vidurkiai (s):\n"
         <<"Skaitymas: "<<skaitymuSuma/3.0<<'\n'
@@ -433,13 +459,13 @@ template <typename Konteineris>
         cout<<"Klaida issaugant vidurkius.\n";
     }
  }
- void tirtiSparta(const string& kelias, int budas, int konteineris){
+ void tirtiSparta(const string&kelias, int budas, int konteineris, int strategija){
     if(konteineris==1){
-        tirtiSpartaBendrai<vector<Studentas>>(kelias, budas, "vector");
+        tirtiSpartaBendrai<vector<Studentas>>(kelias, budas, "vector", strategija);
     }else{
-        tirtiSpartaBendrai<list<Studentas>>(kelias, budas, "list");
+        tirtiSpartaBendrai<list<Studentas>>(kelias, budas, "list", strategija);
     }
- }
+}
 
  template <typename Konteineris>
  void skirstytiPirmaBendrai(const Konteineris& studentai, Konteineris&vargsiukai, Konteineris&kietiakai, int budas){
