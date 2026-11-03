@@ -1813,3 +1813,443 @@ Skirstymas: 0.059867
 Vargsiuku irasymas: 0.783272
 Kietiaku irasymas: 1.074022
 Bendras laikas: 7.719514
+
+Konteineris: vector
+Strategija: 0
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 57.519244 s
+Skirstymas: 0.853121 s
+Vargsiuku irasymas: 6.608793 s
+Kietiaku irasymas: 9.196031 s
+Bendras laikas: 74.177189 s
+
+Konteineris: vector
+Strategija: 0
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 53.886768 s
+Skirstymas: 0.954060 s
+Vargsiuku irasymas: 8.174840 s
+Kietiaku irasymas: 9.545812 s
+Bendras laikas: 72.561480 s
+
+Konteineris: vector
+Strategija: 0
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 51.583051 s
+Skirstymas: 0.554568 s
+Vargsiuku irasymas: 6.594939 s
+Kietiaku irasymas: 9.141442 s
+Bendras laikas: 67.873999 s
+
+Konteineris: vector
+Strategija: 0
+Failas: gen_studentai10000000.txt
+triju bandymu vidurkiai (s):
+Skaitymas: 54.329688
+Skirstymas: 0.787249
+Vargsiuku irasymas: 7.126191
+Kietiaku irasymas: 9.294428
+Bendras laikas: 71.537556
+
+Konteineris: vector
+Strategija: 1
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 52.037326 s
+Skirstymas: 5.536253 s
+Vargsiuku irasymas: 7.943873 s
+Kietiaku irasymas: 10.730886 s
+Bendras laikas: 76.248337 s
+
+Konteineris: vector
+Strategija: 1
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 51.963123 s
+Skirstymas: 3.981248 s
+Vargsiuku irasymas: 7.953938 s
+Kietiaku irasymas: 9.353731 s
+Bendras laikas: 73.252039 s
+
+Konteineris: vector
+Strategija: 1
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 52.753871 s
+Skirstymas: 3.227652 s
+Vargsiuku irasymas: 6.909679 s
+Kietiaku irasymas: 9.203445 s
+Bendras laikas: 72.094646 s
+
+Konteineris: vector
+Strategija: 1
+Failas: gen_studentai10000000.txt
+triju bandymu vidurkiai (s):
+Skaitymas: 52.251440
+Skirstymas: 4.248384
+Vargsiuku irasymas: 7.602496
+Kietiaku irasymas: 9.762687
+Bendras laikas: 73.865008
+
+Konteineris: vector
+Strategija: 2
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 51.599262 s
+Skirstymas: 1.309702 s
+Vargsiuku irasymas: 6.465322 s
+Kietiaku irasymas: 9.283335 s
+Bendras laikas: 68.657621 s
+
+Konteineris: vector
+Strategija: 2
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 51.905024 s
+Skirstymas: 1.425718 s
+Vargsiuku irasymas: 7.234720 s
+Kietiaku irasymas: 9.240261 s
+Bendras laikas: 69.805723 s
+
+Konteineris: vector
+Strategija: 2
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 51.796146 s
+Skirstymas: 1.384433 s
+Vargsiuku irasymas: 6.541921 s
+Kietiaku irasymas: 9.233705 s
+Bendras laikas: 68.956204 s
+
+Konteineris: vector
+Strategija: 2
+Failas: gen_studentai10000000.txt
+triju bandymu vidurkiai (s):
+Skaitymas: 51.766811
+Skirstymas: 1.373284
+Vargsiuku irasymas: 6.747321
+Kietiaku irasymas: 9.252434
+Bendras laikas: 69.139850
+
+Konteineris: vector
+Strategija: 3
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 51.615896 s
+Skirstymas: 0.794248 s
+Vargsiuku irasymas: 6.378611 s
+Kietiaku irasymas: 8.945287 s
+Bendras laikas: 67.734043 s
+
+Konteineris: vector
+Strategija: 3
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 51.940366 s
+Skirstymas: 0.907600 s
+Vargsiuku irasymas: 6.271635 s
+Kietiaku irasymas: 8.988236 s
+Bendras laikas: 68.107837 s
+
+Konteineris: vector
+Strategija: 3
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 51.716221 s
+Skirstymas: 0.771888 s
+Vargsiuku irasymas: 6.452672 s
+Kietiaku irasymas: 8.858745 s
+Bendras laikas: 67.799527 s
+
+Konteineris: vector
+Strategija: 3
+Failas: gen_studentai10000000.txt
+triju bandymu vidurkiai (s):
+Skaitymas: 51.757495
+Skirstymas: 0.824579
+Vargsiuku irasymas: 6.367640
+Kietiaku irasymas: 8.930756
+Bendras laikas: 67.880469
+
+Konteineris: list
+Strategija: 0
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 51.863055 s
+Skirstymas: 1.142021 s
+Vargsiuku irasymas: 6.251121 s
+Kietiaku irasymas: 9.180435 s
+Bendras laikas: 68.436632 s
+
+Konteineris: list
+Strategija: 0
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 51.884510 s
+Skirstymas: 1.065535 s
+Vargsiuku irasymas: 6.277732 s
+Kietiaku irasymas: 9.251717 s
+Bendras laikas: 68.479495 s
+
+Konteineris: list
+Strategija: 0
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 52.389131 s
+Skirstymas: 1.132760 s
+Vargsiuku irasymas: 6.390407 s
+Kietiaku irasymas: 9.219402 s
+Bendras laikas: 69.131700 s
+
+Konteineris: list
+Strategija: 0
+Failas: gen_studentai10000000.txt
+triju bandymu vidurkiai (s):
+Skaitymas: 52.045565
+Skirstymas: 1.113439
+Vargsiuku irasymas: 6.306420
+Kietiaku irasymas: 9.217185
+Bendras laikas: 68.682609
+
+Konteineris: list
+Strategija: 1
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 51.829053 s
+Skirstymas: 4.760142 s
+Vargsiuku irasymas: 6.666649 s
+Kietiaku irasymas: 9.078639 s
+Bendras laikas: 72.334483 s
+
+Konteineris: list
+Strategija: 1
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 52.571240 s
+Skirstymas: 3.378265 s
+Vargsiuku irasymas: 6.982295 s
+Kietiaku irasymas: 12.060548 s
+Bendras laikas: 74.992347 s
+
+Konteineris: list
+Strategija: 1
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 52.218299 s
+Skirstymas: 3.783864 s
+Vargsiuku irasymas: 7.359053 s
+Kietiaku irasymas: 9.051213 s
+Bendras laikas: 72.412429 s
+
+Konteineris: list
+Strategija: 1
+Failas: gen_studentai10000000.txt
+triju bandymu vidurkiai (s):
+Skaitymas: 52.206197
+Skirstymas: 3.974090
+Vargsiuku irasymas: 7.002665
+Kietiaku irasymas: 10.063467
+Bendras laikas: 73.246420
+
+Konteineris: list
+Strategija: 2
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 52.279308 s
+Skirstymas: 1.661846 s
+Vargsiuku irasymas: 6.435078 s
+Kietiaku irasymas: 9.167874 s
+Bendras laikas: 69.544107 s
+
+Konteineris: list
+Strategija: 2
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 52.105780 s
+Skirstymas: 1.646745 s
+Vargsiuku irasymas: 6.320224 s
+Kietiaku irasymas: 9.158091 s
+Bendras laikas: 69.230840 s
+
+Konteineris: list
+Strategija: 2
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 52.277792 s
+Skirstymas: 1.702097 s
+Vargsiuku irasymas: 6.758032 s
+Kietiaku irasymas: 9.084152 s
+Bendras laikas: 69.822074 s
+
+Konteineris: list
+Strategija: 2
+Failas: gen_studentai10000000.txt
+triju bandymu vidurkiai (s):
+Skaitymas: 52.220960
+Skirstymas: 1.670229
+Vargsiuku irasymas: 6.504445
+Kietiaku irasymas: 9.136706
+Bendras laikas: 69.532340
+
+Konteineris: list
+Strategija: 3
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 52.426531 s
+Skirstymas: 0.652951 s
+Vargsiuku irasymas: 8.754850 s
+Kietiaku irasymas: 9.272763 s
+Bendras laikas: 71.107095 s
+
+Konteineris: list
+Strategija: 3
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 53.265543 s
+Skirstymas: 0.680398 s
+Vargsiuku irasymas: 6.637365 s
+Kietiaku irasymas: 12.378721 s
+Bendras laikas: 72.962028 s
+
+Konteineris: list
+Strategija: 3
+
+Failas: gen_studentai10000000.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 10000000
+Vargsiuku: 4131970
+Kietiaku: 5868030
+Skaitymas: 52.234784 s
+Skirstymas: 0.684125 s
+Vargsiuku irasymas: 6.501138 s
+Kietiaku irasymas: 9.107060 s
+Bendras laikas: 68.527108 s
+
+Konteineris: list
+Strategija: 3
+Failas: gen_studentai10000000.txt
+triju bandymu vidurkiai (s):
+Skaitymas: 52.642286
+Skirstymas: 0.672492
+Vargsiuku irasymas: 7.297785
+Kietiaku irasymas: 10.252848
+Bendras laikas: 70.865410
