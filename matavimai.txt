@@ -808,3 +808,58 @@ Skirstymas: 0.947090
 Vargsiuku irasymas: 6.418914
 Kietiaku irasymas: 9.079876
 Bendras laikas: 66.594459
+
+Konteineris: list
+Strategija: 3
+
+Failas: strategiju_testas.txt
+Budas: vidurkis
+Bandymas: 1
+Studentu: 3
+Vargsiuku: 1
+Kietiaku: 2
+Skaitymas: 0.000512 s
+Skirstymas: 0.000008 s
+Vargsiuku irasymas: 0.001378 s
+Kietiaku irasymas: 0.000617 s
+Bendras laikas: 0.002515 s
+
+Konteineris: list
+Strategija: 3
+
+Failas: strategiju_testas.txt
+Budas: vidurkis
+Bandymas: 2
+Studentu: 3
+Vargsiuku: 1
+Kietiaku: 2
+Skaitymas: 0.000481 s
+Skirstymas: 0.000001 s
+Vargsiuku irasymas: 0.000704 s
+Kietiaku irasymas: 0.000463 s
+Bendras laikas: 0.001649 s
+
+Konteineris: list
+Strategija: 3
+
+Failas: strategiju_testas.txt
+Budas: vidurkis
+Bandymas: 3
+Studentu: 3
+Vargsiuku: 1
+Kietiaku: 2
+Skaitymas: 0.000409 s
+Skirstymas: 0.000001 s
+Vargsiuku irasymas: 0.000450 s
+Kietiaku irasymas: 0.000413 s
+Bendras laikas: 0.001274 s
+
+Konteineris: list
+Strategija: 3
+Failas: strategiju_testas.txt
+triju bandymu vidurkiai (s):
+Skaitymas: 0.000467
+Skirstymas: 0.000003
+Vargsiuku irasymas: 0.000844
+Kietiaku irasymas: 0.000498
+Bendras laikas: 0.001813

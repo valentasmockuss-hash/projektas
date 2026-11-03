@@ -189,3 +189,11 @@ Visuose dydžiuose antra strategija skirstė greičiau už pirmą abiem konteine
 Su 10 mln. studentų vector skirstymas sutrumpėjo nuo 1.373284s antroje startegijoje iki 0.824579s trečioje. List sutrumpėjo nuo 1.670229s iki 0.672492s.
 
 Ankstesnis vector būdas (0) skirstė per 0.787249s. Jis abi grupes palieka viename konteineryje, todėl jo atliekamas darbas skiriasi nuo trečios strategijos, kuri dar suformuoja atskirą vargsiuku konteinerį.
+
+
+
+EKRANO NUOTRAUKOS
+
+![Kompiliavimas ir paleidimas](vaizdai/paleidimas.png)
+
+![Spartos tyrimo rezultatas](vaizdai/matavimai.png)
